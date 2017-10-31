@@ -1,0 +1,57 @@
+﻿<header>
+  <h2>UBO</h2>
+</header>
+<form
+  [formGroup]="form"
+  (ngSubmit)="onSubmit(form.value)">
+  <ul>
+      <li>
+          <label for="name">Entity Name</label>
+          <input type="text" name="entityName" id="entityName" formControlName="entityName">
+          <div *ngIf="form.controls.entityName.errors?.pattern" class="error">
+             Entity  Name has invalid characters
+          </div>
+      </li>
+      <li>
+        <label for="name">EIN:</label>
+        <input type="text" name="EIN" id="EIN" formControlName="EIN">
+        <div *ngIf="form.controls.EIN.errors?.pattern" class="error">
+          EIN has invalid characters
+        </div>
+    </li>
+      <li>
+          <label for="name">Classification Code</label>
+          <input type="text" name="classificationCode" id="classificationCode" formControlName="classificationCode">
+          <div *ngIf="form.controls.classificationCode.errors?.pattern" class="error">
+            classificationCode has invalid characters
+          </div>
+      </li>
+      <li>
+        <label for="name">Formation ZIP/PostalCode</label>
+        <input type="text" name="formationZipCode" id="formationZipCode" formControlName="formationZIPCode">
+        <div *ngIf="form.controls.classificationCode.errors?.pattern" class="error">
+          formationZipCode has invalid characters
+        </div>
+    </li>
+    <li>
+      <label for="name">Formation Country Code</label>
+      <input type="text" name="formationCountryCode" id="formationCountryCode" formControlName="formationCountryCode">
+      <div *ngIf="form.controls.formationCountryCode.errors?.pattern" class="error">
+        formationCountryCode has invalid characters
+      </div>
+     </li>
+     <li>
+      <label for="name">Bussiness ZIP/PostalCode</label>
+      <input type="text" name="bussinessZIPCode" id="bussinessZIPCode" formControlName="bussinessZIPCode">
+      <div *ngIf="form.controls.bussinessZIPCode.errors?.pattern" class="error">
+        bussinessZIPCode has invalid characters
+      </div>
+      <label for="name">Bussiness Country Code</label>
+      <input type="text" name="bussinessCountryCode" id="bussinessCountryCode" formControlName="bussinessCountryCode">
+      <div *ngIf="form.controls.bussinessCountryCode.errors?.pattern" class="error">
+        bussinessZIPCode has invalid characters
+      </div>
+     </li>
+  </ul>
+  <button type="submit" [disabled]="!form.valid">Save</button>
+</form>
